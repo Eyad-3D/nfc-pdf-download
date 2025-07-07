@@ -1,20 +1,53 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Download Starting...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed; /* replace with your image */
+      background-size: cover;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6); /* dark overlay for contrast */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      font-size: 24px;
+    }
+  </style>
 </head>
 <body>
+  <div class="overlay">
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="message">Your download is starting...</div>
+  </div>
+
   <script>
     window.onload = function() {
       const link = document.createElement('a');
-      link.href = 'Sierra Life logo.pdf'; // relative to the current folder
-      link.download = 'Sierra Life logo.pdf'; // filename for download
+      link.href = 'brochure.pdf'; // Your PDF file
+      link.download = 'brochure.pdf'; // File name on download
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     };
   </script>
-  <p>Your download is starting...</p>
 </body>
 </html>
